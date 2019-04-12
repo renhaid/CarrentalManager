@@ -14,9 +14,13 @@
 	<mvc:resources location="/PSD/" mapping="/PSD/**"/>
 	<mvc:resources location="/vendors/" mapping="/vendors/**"/>
 	
+	
+	
+	<mvc:default-servlet-handler/>
+	
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    		<property name="prefix" value="/WEB-INF/jsp/"/>
+    		<property name="prefix" value="/WEB-INF/"/>
     		<property name="suffix" value=".jsp"></property>
 	</bean>
 	
