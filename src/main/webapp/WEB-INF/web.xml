@@ -57,7 +57,36 @@
     <error-code>404</error-code>
     <location>/WEB-INF/error-404.html</location>
   </error-page>
+  
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/WEB-INF/error-500.html</location>
+  </error-page>
   <!-- end -->
+  
+  <!-- 自定义过滤器 -->
+  <filter>
+  	<filter-name>myFilter</filter-name>
+  	<filter-class>com.filter.MyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>myFilter</filter-name>
+  	<url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+  
+  <!-- Spring自带过滤器 -->
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 
 
 
